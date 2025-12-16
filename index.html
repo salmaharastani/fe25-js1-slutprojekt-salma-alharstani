@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMDB - Slutprojekt</title>
+
+    <!-- Bibliotek (krav: använd ett bibliotek) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="container py-4">
+      <h1 class="mb-3">The Movie Database</h1>
+
+      <div class="d-flex gap-2 flex-wrap mb-3">
+        <button id="btnTopRated" class="btn btn-dark">Top Rated (Top 10)</button>
+        <button id="btnPopular" class="btn btn-dark">Popular (Top 10)</button>
+      </div>
+
+      <form id="searchForm" class="row g-2 align-items-center">
+        <div class="col-12 col-md-6">
+          <input
+            id="searchInput"
+            class="form-control"
+            type="text"
+            placeholder="Sök film eller person..."
+            required
+          />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="d-flex gap-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="searchType" value="movie" checked />
+              Film
+            </label>
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="searchType" value="person" />
+              Person
+            </label>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-2">
+          <button class="btn btn-primary w-100" type="submit">Sök</button>
+        </div>
+      </form>
+    </header>
+
+    <main class="container pb-5">
+      <div id="status" class="my-3"></div>
+      <div id="results" class="row g-3"></div>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
